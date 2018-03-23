@@ -2,12 +2,18 @@ import React from 'react';
 import { Post } from '../post';
 import './timeline.css'
 
-export const Timeline = ({ posts }) => (
+export const Timeline = (props) => (
   <div className="timeline">
     <div className="timeline__post-container">
-      { posts.map(post => (
+      { props.posts.map(post => (
         <div className="timeline__post">
-          <Post {...post} />
+          <Post
+            owner={post.owner}
+            location={post.location}
+            imageUrl={post.imageUrl}
+            likes={post.likes}
+            comments={post.comments}
+          />
         </div>) )
       }
     </div>

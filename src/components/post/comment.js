@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const Comment = ({ owner, text }) => (
+export const Comment = (props) => (
   <div>
-    <b>{owner}</b> {text}
+    <b>{props.owner}</b> {props.text}
   </div>
 );
